@@ -1,11 +1,19 @@
-name: first flow
-#on: create
-on: workflow_dispatch
+name: Blackduck Scan
+on: workflow_call
 jobs:
-    Build:
+    Blackduck_Scan:
       runs-on: ubuntu-latest
       steps:
           - run: |
                    echo "hello"
-                   echo "this is triggered when you create a tag"
+                   echo "this is triggered when you are triggerring from another project"
+
+
+    Blackduck_scan_2:
+      runs-on: ubuntu-latest
+      if: $RDS_TECHNOLOGY == 'DOT-NET'
+      steps:
+          - run: |
+                   echo "hello"
+                   echo "this will trigger when env variable is $RDS_TECHNOLOGY"
 
