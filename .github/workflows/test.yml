@@ -3,7 +3,7 @@ name: first flow
 on: workflow_dispatch
 jobs:
     Build:
-      runs-on: $RUNNER_TAG
+      runs-on: ${{ env.RUNNER_TAG }}
       steps:
           - run: |
                    echo "hello"
