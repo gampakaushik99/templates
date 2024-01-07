@@ -1,8 +1,9 @@
 name: first flow
-on: workflow_dispatch
+on: create
 jobs:
-  first-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: print hello
-        run: echo "Hello"
+    Build:
+      runs-on: ubuntu-latest
+      steps:
+          - run: |
+                   echo "hello"
+                   echo "this is triggered when you create a tag"
