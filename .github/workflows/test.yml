@@ -1,11 +1,9 @@
 name: first flow
 #on: create
 on: workflow_dispatch
-env:
-  RUNNER_LABEL: ${{ secrets.RUNNER_TAG }}
 jobs:
     Build:
-      runs-on: ${{ secrets.RUNNER_LABEL }}
+      runs-on: ubuntu-latest
       steps:
           - run: |
                    echo "hello"
