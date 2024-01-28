@@ -1,0 +1,9 @@
+name: Uncontrolled CI/CD Stages
+on: workflow_call
+jobs:
+    SonarQube_Scan:
+      uses: gampakaushik99/templates/.github/workflows/sonarqube.yml@main
+    Blackduck_Scan:
+      needs: SonarQube_Scan
+      uses: gampakaushik99/templates/.github/workflows/blackduck.yml@main
+
