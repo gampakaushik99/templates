@@ -11,9 +11,11 @@ jobs:
 
     Blackduck_scan_DOT-NET:
       runs-on: ubuntu-latest
-      if: ${{ env.RDS_TECHNOLOGY == 'DOT-NET' }}
       steps:
-          - run: |
+        - name: Running Blackduck scan for DOT-NET
+          if: ${{ env.RDS_TECHNOLOGY == 'DOT-NET' }}
+          run: |
                    echo "hello"
                    echo "this will trigger when env variable is $RDS_TECHNOLOGY"
+
 
