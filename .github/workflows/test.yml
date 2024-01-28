@@ -1,17 +1,7 @@
 name: Blackduck Scan
 on: workflow_call
 jobs:
-    Blackduck_Scan:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Running Blackduck scan for Java
-          if: ${{ env.RDS_TECHNOLOGY == 'JAVA' }}
-          run: |
-                   echo "hello"
-                   echo "this is triggered when you are triggerring from another project"
-
-
-    Blackduck_scan_DOT-NET:
+    Blackduck_scan:
       runs-on: ubuntu-latest
       steps:
         - name: Running Blackduck scan for DOT-NET
@@ -19,3 +9,9 @@ jobs:
           run: |
                    echo "hello"
                    echo "this will trigger when env variable is $RDS_TECHNOLOGY"
+        - name: Running Blackduck scan for Java
+          if: ${{ env.RDS_TECHNOLOGY == 'JAVA' }}
+          run: |
+                   echo "hello"
+                   echo "this is triggered when you are triggerring from another project"
+
