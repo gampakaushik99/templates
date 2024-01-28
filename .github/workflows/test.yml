@@ -4,7 +4,9 @@ jobs:
     Blackduck_Scan:
       runs-on: ubuntu-latest
       steps:
-          - run: |
+        - name: Running Blackduck scan for Java
+          if: ${{ env.RDS_TECHNOLOGY == 'JAVA' }}
+          run: |
                    echo "hello"
                    echo "this is triggered when you are triggerring from another project"
 
@@ -17,5 +19,3 @@ jobs:
           run: |
                    echo "hello"
                    echo "this will trigger when env variable is $RDS_TECHNOLOGY"
-
-
