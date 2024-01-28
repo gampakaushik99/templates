@@ -1,1 +1,17 @@
-
+name: Blackduck Scan
+on: workflow_call
+jobs:
+    Blackduck_scan:
+      runs-on: ${{ vars.RUNNER_TAG }}
+      steps:
+        - name: Running Blackduck scan for DOT-NET
+          if: ${{ vars.RDS_TECHNOLOGY == 'DOT-NET' }}
+          run: |
+                   echo "hello"
+                   echo "this will trigger when RDS_TECHNOLOGY variable is ${{ vars.RDS_TECHNOLOGY }}"
+                   
+        - name: Running Blackduck scan for Java
+          if: ${{ vars.RDS_TECHNOLOGY == 'JAVA' }}
+          run: |
+                   echo "hello"
+                   echo "this will trigger when RDS_TECHNOLOGY variable is ${{ vars.RDS_TECHNOLOGY }}"
