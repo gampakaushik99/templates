@@ -2,7 +2,7 @@ name: Blackduck Scan
 on: workflow_call
 jobs:
     Blackduck_scan_DOT-NET:
-      if: env.RDS_TECHNOLOGY == 'DOT-NET'
+      if: ${{ vars.RDS_TECHNOLOGY == 'DOT-NET' }}
       runs-on: ubuntu-latest
       steps:
         - name: Running Blackduck scan for DOT-NET
@@ -12,7 +12,7 @@ jobs:
 
 
     Blackduck_scan_JAVA:
-      if: env.RDS_TECHNOLOGY == 'JAVA'
+      if: ${{ vars.RDS_TECHNOLOGY == 'JAVA' }}
       runs-on: ubuntu-latest
       steps:
         - name: Running Blackduck scan for Java
