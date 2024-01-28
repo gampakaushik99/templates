@@ -11,7 +11,7 @@ jobs:
 
     Blackduck_scan_DOT-NET:
       runs-on: ubuntu-latest
-      if: ${{ $RDS_TECHNOLOGY == 'DOT-NET' }}
+      if: ${{ env.RDS_TECHNOLOGY == 'DOT-NET' }}
       steps:
           - run: |
                    echo "hello"
