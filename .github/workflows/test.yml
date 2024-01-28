@@ -9,9 +9,9 @@ jobs:
                    echo "this is triggered when you are triggerring from another project"
 
 
-    Blackduck_scan_2:
+    Blackduck_scan_DOT-NET:
       runs-on: ubuntu-latest
-      if: $RDS_TECHNOLOGY == 'DOT-NET'
+      if: ${{ $RDS_TECHNOLOGY == 'DOT-NET' }}
       steps:
           - run: |
                    echo "hello"
